@@ -19,6 +19,10 @@ Le terrain est limité par une grille définie, et le rover ne doit pas sortir d
 - **Rotation** : Le rover peut tourner à gauche ou à droite.
 - **Gestion des instructions** : Le rover peut recevoir une série d'instructions pour exécuter des mouvements.
 
+Ci-dessous la représentation de la planète sous forme de grille:
+
+![grid.png](grid.png)
+
 ## Problèmes Identifiés
 
 ### 1. Code Mal Organisé
