@@ -77,26 +77,32 @@ class RoverTest {
     @Test
     void processStepByStepLeft() {
     	
-    	rover.setX(2);
-    	rover.setY(3);
+    	int posX = 2;
+    	int posY = 3;
+    	
+    	rover.setX(posX);
+    	rover.setY(posY);
     	rover.setOrientation("NORTH");
 
        	rover.process("RF");
-
-        assertEquals(2, rover.getX());
-        assertEquals(3, rover.getY());
+       	posX++;
+       	
+        assertEquals(posX, rover.getX());
+        assertEquals(posY, rover.getY());
         assertEquals("EAST", rover.getOrientation());
         
     	rover.process("RF");
-        
-        assertEquals(2, rover.getX());
-        assertEquals(3, rover.getY());
+    	posY--;
+    	
+        assertEquals(posX, rover.getX());
+        assertEquals(posY, rover.getY());
         assertEquals("SOUTH", rover.getOrientation());
         
     	rover.process("RF");
-        
-        assertEquals(2, rover.getX());
-        assertEquals(3, rover.getY());
+    	posX--;
+    	
+        assertEquals(posX, rover.getX());
+        assertEquals(posY, rover.getY());
         assertEquals("WEST", rover.getOrientation());
         
         rover.process("RF");
