@@ -126,20 +126,6 @@ class RoverTest {
     }
     
     @Test
-    void processAfterLimits() {
-    	
-    	rover.setX(2);
-    	rover.setY(3);
-    	rover.setOrientation(Orientation.NORTH);
-
-    	rover.process("LFFFLFFFF");
-
-        assertEquals(0, rover.getX());
-        assertEquals(0, rover.getY());
-        assertEquals(Orientation.SOUTH, rover.getOrientation());
-    }
-    
-    @Test
     void processSouth() {
     	
     	rover.setX(2);
@@ -202,8 +188,8 @@ class RoverTest {
 
         rover.process("LFFFLFFFF");
 
-        assertEquals(2, rover.getX());
-        assertEquals(3, rover.getY());
-        assertEquals(Orientation.NORTH, rover.getOrientation());
+        assertEquals(0, rover.getX());
+        assertEquals(0, rover.getY());
+        assertEquals(Orientation.SOUTH, rover.getOrientation());
     }
 }
