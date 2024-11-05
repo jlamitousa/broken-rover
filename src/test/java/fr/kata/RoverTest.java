@@ -144,13 +144,13 @@ class RoverTest {
     	
     	rover.setX(2);
     	rover.setY(3);
-    	rover.setOrientation(Orientation.NORTH);
+    	rover.setOrientation(Orientation.EAST);
 
     	rover.process("LFFLFFF");
 
-        assertEquals(2, rover.getX());
-        assertEquals(3, rover.getY());
-        assertEquals(Orientation.SOUTH, rover.getOrientation());
+        assertEquals(0, rover.getX());
+        assertEquals(5, rover.getY());
+        assertEquals(Orientation.WEST, rover.getOrientation());
     }
     
     @Test
@@ -158,13 +158,13 @@ class RoverTest {
     	
     	rover.setX(2);
     	rover.setY(3);
-    	rover.setOrientation(Orientation.NORTH);
+    	rover.setOrientation(Orientation.WEST);
 
     	rover.process("LFFLFFF");
 
-        assertEquals(2, rover.getX());
-        assertEquals(3, rover.getY());
-        assertEquals(Orientation.SOUTH, rover.getOrientation());
+        assertEquals(5, rover.getX());
+        assertEquals(1, rover.getY());
+        assertEquals(Orientation.EAST, rover.getOrientation());
     }
     
     @Test
