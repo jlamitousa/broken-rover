@@ -125,6 +125,7 @@ class RoverTest {
         assertEquals(Orientation.SOUTH, rover.getOrientation());
     }
     
+    @Test
     void processAfterLimits() {
     	
     	rover.setX(2);
