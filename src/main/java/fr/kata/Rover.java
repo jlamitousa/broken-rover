@@ -3,7 +3,7 @@ package fr.kata;
 public class Rover {
     private int x;
     private int y;
-    private String direction;
+    private Orientation direction;
 
     public void setX(int i) {
         x = i;
@@ -13,8 +13,8 @@ public class Rover {
         y = i;
     }
 
-    public void setOrientation(String s) {
-        direction = s;
+    public void setOrientation(Orientation d) {
+        direction = d;
     }
 
     public void process(String commands) {
@@ -22,45 +22,45 @@ public class Rover {
             switch (c) {
                 case 'R':
                     switch (direction) {
-                        case "NORTH":
-                            direction = "EAST";
+                        case NORTH:
+                            direction = Orientation.EAST;
                             break;
-                        case "EAST":
-                            direction = "SOUTH";
+                        case EAST:
+                            direction = Orientation.SOUTH;
                             break;
-                        case "SOUTH":
-                            direction = "OUEST";
+                        case SOUTH:
+                            direction = Orientation.WEST;
                             break;
                     }
                     break;
                 case 'L':
                     switch (direction) {
-                        case "NORTH":
-                            direction = "WEST";
+                        case NORTH:
+                            direction = Orientation.WEST;
                             break;
-                        case "WEST":
-                            direction = "SOUTH";
+                        case WEST:
+                            direction = Orientation.SOUTH;
                             break;
-                        case "SOUTH":
-                            direction = "EAST";
+                        case SOUTH:
+                            direction = Orientation.EAST;
                             break;
-                        case "EAST":
-                            direction = "NORTH";
+                        case EAST:
+                            direction = Orientation.NORTH;
                             break;
                     }
                     break;
                 case 'F':
                     switch (direction) {
-                        case "NORTH":
+                        case NORTH:
                             y++;
                             break;
-                        case "WEST":
+                        case WEST:
                             x--;
                             break;
-                        case "SOUTH":
+                        case SOUTH:
                             y--;
                             break;
-                        case "EAST":
+                        case EAST:
                             x++;
                             break;
                     }
@@ -85,7 +85,7 @@ public class Rover {
         return y;
     }
 
-    public String getOrientation() {
+    public Orientation getOrientation() {
         return direction;
     }
 }

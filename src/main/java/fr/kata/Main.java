@@ -5,7 +5,7 @@ public class Main {
         var r = new Rover();
         r.setX(2);
         r.setY(3);
-        r.setOrientation("NORTH");
+        r.setOrientation(Orientation.NORTH);
 
         r.process("LFFLFFF");
 
