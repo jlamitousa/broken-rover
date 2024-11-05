@@ -35,7 +35,8 @@ class RoverTest {
     }
 
     @Test
-    void processStepByStep() {
+    void processStepByStepRight() {
+    	
     	rover.setX(2);
     	rover.setY(3);
     	rover.setOrientation("NORTH");
@@ -45,6 +46,57 @@ class RoverTest {
         assertEquals(2, rover.getX());
         assertEquals(3, rover.getY());
         assertEquals("WEST", rover.getOrientation());
+        
+    	rover.process("LF");
+        
+        assertEquals(2, rover.getX());
+        assertEquals(3, rover.getY());
+        assertEquals("SOUTH", rover.getOrientation());
+        
+    	rover.process("LF");
+        
+        assertEquals(2, rover.getX());
+        assertEquals(3, rover.getY());
+        assertEquals("EAST", rover.getOrientation());
+        
+        rover.process("LF");
+
+        assertEquals(2, rover.getX());
+        assertEquals(3, rover.getY());
+        assertEquals("NORTH", rover.getOrientation());
+        
+    }
+    
+    @Test
+    void processStepByStepLeft() {
+    	
+    	rover.setX(2);
+    	rover.setY(3);
+    	rover.setOrientation("NORTH");
+
+       	rover.process("RF");
+
+        assertEquals(2, rover.getX());
+        assertEquals(3, rover.getY());
+        assertEquals("EAST", rover.getOrientation());
+        
+    	rover.process("RF");
+        
+        assertEquals(2, rover.getX());
+        assertEquals(3, rover.getY());
+        assertEquals("SOUTH", rover.getOrientation());
+        
+    	rover.process("RF");
+        
+        assertEquals(2, rover.getX());
+        assertEquals(3, rover.getY());
+        assertEquals("WEST", rover.getOrientation());
+        
+        rover.process("RF");
+
+        assertEquals(2, rover.getX());
+        assertEquals(3, rover.getY());
+        assertEquals("NORTH", rover.getOrientation());
         
     }
     
