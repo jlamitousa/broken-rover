@@ -31,6 +31,9 @@ public class Rover {
                         case SOUTH:
                             direction = Orientation.WEST;
                             break;
+                        case WEST:
+                            direction = Orientation.NORTH;
+                            break;
                     }
                     break;
                 case 'L':
