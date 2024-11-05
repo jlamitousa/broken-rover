@@ -17,11 +17,13 @@ class RoverTest {
 	
     @Test
     void setX() {
+    	rover.setX(10);
         assertEquals(10, rover.getX());
     }
 
     @Test
     void setY() {
+    	rover.setY(10);
         assertEquals(10, rover.getY());
     }
 
@@ -33,6 +35,20 @@ class RoverTest {
     }
 
     @Test
+    void processStepByStep() {
+    	rover.setX(2);
+    	rover.setY(3);
+    	rover.setOrientation("NORTH");
+
+    	rover.process("LF");
+
+        assertEquals(2, rover.getX());
+        assertEquals(3, rover.getY());
+        assertEquals("WEST", rover.getOrientation());
+        
+    }
+    
+    @Test
     void process() {
     	rover.setX(2);
     	rover.setY(3);
@@ -42,7 +58,7 @@ class RoverTest {
 
         assertEquals(2, rover.getX());
         assertEquals(3, rover.getY());
-        assertEquals("NORTH", rover.getOrientation());
+        assertEquals("SOUTH", rover.getOrientation());
     }
     
     @Test
@@ -55,7 +71,7 @@ class RoverTest {
 
         assertEquals(2, rover.getX());
         assertEquals(3, rover.getY());
-        assertEquals("NORTH", rover.getOrientation());
+        assertEquals("SOUTH", rover.getOrientation());
     }
 
     @Test
